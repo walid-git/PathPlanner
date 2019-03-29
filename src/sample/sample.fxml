@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="429.0" prefWidth="831.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <StackPane fx:id="stackPane" layoutX="250.0" layoutY="31.0" prefHeight="369.0" prefWidth="581.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="31.0" />
+      <TitledPane animated="false" collapsible="false" layoutY="31.0" prefHeight="398.0" prefWidth="250.0" text="Settings" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="31.0">
+         <content>
+            <VBox prefHeight="374.0" prefWidth="191.0" spacing="10.0">
+               <children>
+                  <Label text="Algorithm :" />
+                  <RadioButton mnemonicParsing="false" selected="true" text="Dijkstra">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="algorithm" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="A*" toggleGroup="$algorithm" />
+                  <Label text="Search speed :">
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding></Label>
+                  <Slider fx:id="searchSpeed" blockIncrement="1.0" max="499.0" min="350.0" value="485.0" />
+                  <Label text="Travel speed :" />
+                  <Slider fx:id="travelSpeed" blockIncrement="1.0" max="400.0" value="350" />
+                  <Label text="Click action :">
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0" spacing="5.0">
+                     <children>
+                        <ToggleButton mnemonicParsing="false" selected="true" text="Destination">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="click" />
+                           </toggleGroup>
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton mnemonicParsing="false" text="Start" toggleGroup="$click" />
+                        <ToggleButton mnemonicParsing="false" text="Obstacle" toggleGroup="$click" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </content>
+      </TitledPane>
+      <MenuBar AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Map">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#newMap" text="New" />
+              <MenuItem mnemonicParsing="false" onAction="#loadMap" text="Open" />
+                  <MenuItem mnemonicParsing="false" onAction="#saveMap" text="Save as" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="About">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#help" text="Help" />
+                  <MenuItem mnemonicParsing="false" onAction="#about" text="About" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>
